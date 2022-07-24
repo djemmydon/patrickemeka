@@ -54,7 +54,7 @@ function About() {
             Chukwuemeka Patrick
           </h1>
           <p className=" text-sm  font-monts">
-            I'm an enthusiastic young guy, with 2 years of experience who loves
+            I&apos;m an enthusiastic young guy, with 2 years of experience who loves
             Web Design & Development. I do my best and constantly try to be
             autodidact, learning new things and always looking for options of
             progress or work from anywhere.

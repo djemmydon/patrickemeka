@@ -54,8 +54,8 @@ function Navbar() {
           }
         >
           <ul className="flex flex-col my-20 ">
-            {Nav.map((item) => (
-              <Link href={item.link} className=" ">
+            {Nav.map((item, idx) => (
+              <Link href={item.link} className=" " key={idx}>
                 <a
                   onClick={() => OpenHandler(setOpen(false))}
                   className=" p-4 border-b border-gray-600 font-monts  text-white  font-semibold text-lg hover:text-[#89715b]"
