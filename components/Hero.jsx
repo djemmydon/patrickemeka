@@ -51,10 +51,7 @@ function Hero() {
               
               data-aos-delay="150"
             >
-              I'm an enthusiastic young guy, with 2 years of experience who
-              loves Web Design &apos; Development. I do my best and constantly try to
-              be autodidact, learning new things and always looking for options
-              of progress or work from anywhere.
+           I am a frontend Designer Developer with 3+ years 
             </p>
           </div>
 
