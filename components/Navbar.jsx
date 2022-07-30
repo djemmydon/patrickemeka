@@ -27,7 +27,7 @@ function Navbar() {
   };
 
   return (
-    <div className="sticky  py-10 bg-white w-full h-14 flex  items-center px-5">
+    <div className="sticky  py-10 bg-white w-full h-14 flex  items-center px-5 ">
       <div className="bg-white w-full h-18 flex justify-between  items-center px-5">
       <div className="">
         <Image src={MyLogo} width="100" height="14" />
@@ -49,11 +49,11 @@ function Navbar() {
         <div
           className={
             open
-              ? " fixed inset-0 text-center w-[300px] h-full z-10 bg-black  ease-out transition-all duration-500 "
-              : " duration-500 ease-out transition-all  fixed left-[-100%] "
+              ? " fixed inset-0 text-center w-[300px] h-full z-10 bg-black   ease-out transition-all duration-500 "
+              : " duration-500 ease-out transition-all  fixed left-[-100%] z-10  "
           }
         >
-          <ul className="flex flex-col my-20 ">
+          <ul className="flex flex-col my-20   z-10 ">
             {Nav.map((item, idx) => (
               <Link href={item.link} className=" " key={idx}>
                 <a

@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./UI/Header";
 import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
+
 
 const project = [
   {
@@ -48,6 +53,11 @@ const project = [
 ];
 
 function Portfolio() {
+
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const [index, setIndex] = useState(1);
 
   const onToggle = (newIndex) => {
@@ -58,7 +68,12 @@ function Portfolio() {
     <div>
       <Header name="My Portfolio" />
 
-      <div className="text-white">
+      <div className="text-white" 
+             data-aos="fade-up"
+             data-aos-offset="200"
+             data-aos-delay="150"
+      
+      >
         <ul className="flex justify-center gap-10 p-2">
           <li
             onClick={() => onToggle(1)}
@@ -93,15 +108,14 @@ function Portfolio() {
         </ul>
       </div>
 
-      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5 justify-items-center">
+      <div className={index === 1 ? "  flex justify-center flex-wrap  gap-3 py-5 justify-items-center" : "hidden"}      data-aos="fade-out"
+          data-aos-offset="200"
+          data-aos-delay="150">
         {project.map((item) => (
           <div
             key={item.id}
-            className={
-              index === 1
-                ? "w-[300px] h-52 block group relative"
-                : " w-full  sm:w-[300px]   h-52 hidden"
-            }
+            className="w-[300px] h-52 block group relative"
+              
           >
             <div className="w-[300px]   h-52">
               <img
@@ -123,7 +137,7 @@ function Portfolio() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5 justify-items-center">
+      <div className={index === 2 ? "  flex justify-center flex-wrap  gap-3 py-5 justify-items-center" : "hidden"}>
         {project
           .filter((item) => item.type === "design")
           .map((item) => (
@@ -154,7 +168,9 @@ function Portfolio() {
             </div>
           ))}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5 justify-items-center">
+      <div className={index === 3 ? " flex justify-center flex-wrap  gap-3 py-5 justify-items-center" : "hidden"}
+     
+      >
         {project
           .filter((item) => item.type === "website")
           .map((item) => (
@@ -166,7 +182,7 @@ function Portfolio() {
                 : " w-full  sm:w-[300px]   h-52 hidden"
             }
           >
-            <div className="w-[300px]   h-52">
+            <div className="w-[300px] md:w-[300px]   h-52">
               <img
                 src={item.img}
                 alt=""
